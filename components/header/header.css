@@ -1,0 +1,140 @@
+ 
+.navbar {
+	background: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1.8rem;
+	height: 80px;
+	padding: 0 48px;
+ }
+ 
+.logo {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+ }
+ 
+.logo_img {
+	width: 48px;
+	height: 48px;
+	background: #DBDBE9;
+	border-radius: 4px;
+	margin-right: 24px;
+ }
+.wrapper_menu{
+	display: flex;
+	flex-direction: column;
+	width: 480px;
+}
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	color: #9FADC1;
+	position: relative;
+ }
+
+.menu_element {
+	cursor: pointer; 
+	outline: none;
+	user-select: none;
+
+}
+.menu_element > a{
+	display: inline-block;
+	text-decoration: none;
+	padding: 30px 0 26px 0;
+	width: 160px;
+	text-align: center;
+	color: #9FADC1;
+}
+
+ 
+/*.menu_element > a:hover {color: #2D9CDB;}
+ #d0d7e1
+ .menu_element_active > a { color:  #2D9CDB; }*/
+
+
+
+ 
+.user{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	height: 100%;
+}
+ 
+.user_img {
+	width: 48px;
+	height: 48px;
+	background: #DBDBE9;
+	border-radius: 50%;
+	margin-right: 24px;
+ }	
+ .user_dropdown_menu{
+	display: none;
+	flex-direction: column;
+	position: absolute;
+	top: 80px;
+	left:84px;
+	width: 120px;
+	height: 100%;
+	background: #FFFFFF;
+	box-shadow: 0px 4px 8px rgba(53, 75, 88, 0.16);
+	border-radius: 0px 0px 2px;
+	padding: 8px 0;
+
+}
+.user_dropdown_menu>div{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 20px 15px;
+}
+
+.user_dropdown_menu>div>span{
+	padding-left: 10px;
+	font-size: 14px;
+
+}
+.user_dropdown_menu>div:hover{
+	background-color: #F8F8FD;
+}
+.user:hover .user_dropdown_menu{
+	display: flex;
+}
+.ic {
+	display: block;
+	width: 14px;
+	height: 14px;
+ }
+ 
+.ic_search {background: url('../../src/assets/img/icon/ic_search.svg') no-repeat;}
+.ic_user{background:url('../../src/assets/img/icon/ic_user.svg') no-repeat;}
+.ic_logout{background:url('../../src/assets/img/icon/ic_logout.svg') no-repeat;}
+
+.underline-one{
+	margin-left: 0px;
+}
+.underline-two{
+	margin-left: 160px;
+}
+.underline-three{
+	margin-left: 320px;
+}
+#underline{
+	height: 4px;
+	width: 160px;
+	margin: 0;
+	background: #2D9CDB;
+	border: none;
+	transition: .3s ease-in-out;	
+}
+

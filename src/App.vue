@@ -1,0 +1,241 @@
+<template>
+  <div id="app">
+    
+    <HEADER></HEADER>
+    
+    <transition name="fade">
+    	<router-view></router-view>
+    </transition>
+
+
+    
+  </div>
+</template>
+
+<script>
+
+</script>
+
+<style>
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to  {
+  opacity: 0;
+}
+
+html {
+	font-size: 10px;
+	font-family: 'Roboto', sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	line-height: normal;
+	overflow-y: hidden;
+}
+
+body{
+	min-width: 1280px;
+	background-color: #FCFCFE;
+
+}
+th{
+	font-weight: 100;
+}
+.filter{
+	display: flex;
+	flex-direction: row;
+	padding: 44px 48px 60px 48px;	
+}
+.table_wrapper{
+
+	padding: 0 32px;
+
+}
+.btn {
+	display: inline-block;
+	width: 96px;
+	height: 24px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	text-transform: uppercase;
+	border-radius: 12px;
+	border: none;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background-color: #6197E2;
+	outline: none;
+ }
+ 
+.btn_send {
+	background-color: #6197E2;
+	border-color: #6197E2;
+ }
+ 
+.btn_sent {background-color: #3ACB77;}
+ 
+.btn_added {background-color: #3ACB77;}
+ 
+.btn_transaction {
+	background-color: #6197E2;
+	border-color: #6197E2;
+ }
+ 
+.btn_disable {background-color: #EB5757;}
+ 
+.btn_moreInfo {
+	background-color: #FFFFFF;
+	border: 1px solid #6197E2;
+	color: #6197E2;
+ }
+ 
+.btn_select {
+	border: 1px solid #6197E2;
+	color: #6197E2;
+	background-color: #fff;
+ }
+ 
+.btn_find_apartment {
+	border: 1px solid #6197E2;
+	color: #6197E2;
+	background-color: #fff;
+ }
+ 
+.btn_addClient {
+	background-color: #6197E2;
+	border-color: #6197E2;
+	user-select: none;
+ }
+ .btn_addClient:hover{
+-webkit-box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
+-moz-box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
+box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
+ }
+ 
+.btn_buy {background-color: #3ACB77;}
+ 
+.btn_add {
+	background-color: #6197E2;
+	border-color: #6197E2;
+ }
+ 
+.btn_agree {background-color: #3ACB77;}
+ 
+.btn_width-144px {
+	width: 144px;
+	height: 24px;
+	background-color: #fff;
+ }
+ 
+.btn_width-160px {
+	border-radius: 20px;
+	width: 160px;
+	height: 40px;
+	font-size: 1.4rem;
+	padding: 11px 0;
+ }
+ 
+.btn_width-200px {
+	font-size: 1.4rem;
+	border-radius: 1.4em;
+	width: 200px;
+	height: 40px;
+	padding: 11px 0;
+ }
+ 
+.btn_width-104px {
+	border-radius: 1.4rem;
+	font-size: 1.4rem;
+	text-transform: none;
+	font-weight: 500;
+	width: 104px;
+	height: 32px;
+	padding: 8px 0;
+ }
+ 
+.btn_not_active {
+	color: #9FADC1;
+	border: 1px solid #EDEDF6;
+	background-color: #fff;
+ }
+ 
+	.btn_not_active:hover {background-color: #F8F8FD;}
+ 
+.btn_width-192px {
+	border-radius: 16px;
+	width: 192px;
+	height: 32px;
+	padding: 8px 0;
+	font-size: 1.4rem;
+	text-transform: none;
+ }
+.btn_clear_search {
+	width: 24px;
+	height: 24px;
+	border: 1px solid #EDEDF6;
+	border-radius: 4px;
+	outline: none;
+	margin-left: 24px;
+	background: url('assets/img/icon/ic_close.svg') no-repeat center center;
+	background-color: white;
+	cursor: pointer;
+ }
+	.search_block {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 182px;
+		
+	 }
+	 
+	.search_input {
+		border: none;
+		border-bottom: 1px solid #EDEDF6;
+		font-size: 1.4em;
+		color: #9FADC1;
+		width: 160px;
+		padding: 0 0 4px 4px;
+		outline: none;
+		background-color: inherit;
+	 }
+	 
+	.search_input::placeholder {color: #9FADC1;}
+	.wrapper_for_filter_elements {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+ }
+ 
+.wrapper_data {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+ }
+ 
+.data_title {
+	font-family: Roboto;
+	font-size: 1.4rem;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	color: #9FADC1;
+	margin-right: 8px;
+ }
+ 
+.wrapper_input_range {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+ }
+ 
+.input_range_united {
+	background: #FFFFFF;
+	border: 1px solid #EDEDF6;
+	box-sizing: border-box;
+	border-radius: 4px;
+	font-size: 1.4rem;
+	outline: none; /*color: #9FADC1;*/
+ }
+ 
+</style>

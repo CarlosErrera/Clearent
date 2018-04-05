@@ -1,0 +1,116 @@
+<div>
+<div class="filter">
+	<div class="search_block">
+		<i class="ic ic_search"></i>
+		<input class="search_input" type="text" name="" placeholder="Поиск">		
+	</div>	
+		<div class="wrapper-for-address-rooms-cost">
+			<div class="address">
+				<span>Адрес:</span>
+				<input type="text" name="" placeholder="Открыть карту">
+			</div>
+			<div class="rooms">
+				<span>Комнаты:</span>
+				<div class="rooms_dropdown">
+					<i class="dropdown_arrow"></i>
+					<div class="rooms_dropdown_content">
+						
+
+						<label class="checkbox_container" v-for="room in rooms">{{ room.value }}
+						  <input type="checkbox" @click="sortRoom(room.value)">
+						  <span class="checkmark"></span>
+						</label>
+
+					</div>
+
+				</div>
+			</div>
+			<div class="cost">
+				<span>Стоимость:</span>
+				<input class="cost_from" type="text"  placeholder="от"><div class="line"></div>
+				<input class="cost_to" type="text"  placeholder="до">
+				<button class="btn_clear_search"></button>
+			</div>			
+		</div>	
+</div>
+<div class="table_wrapper">
+<table class="table_aparts">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th class="aparts_th_date">дата</th>
+			<th class="aparts_th_address">адрес</th>
+			<th class="aparts_th_rooms">комнат</th>
+			<th class="aparts_th_cost">стоимость</th>
+			<th class="aparts_th_tel">телефон</th>
+			<th class="aparts_th_photo">фото</th>
+			<th class="aparts_th_buttons"></th>
+		</tr>
+	</thead>
+	<tbody >
+		<tr v-for="flat in flats">
+			<td>{{ flat.id}}</td>
+			<td>{{ flat.date}}</td>
+			<td>{{ flat.address}}</td>
+			<td>{{ flat.room_count}}</td>
+			<td>{{ flat.price | toRUB(flat.price)}}</td>
+			<td>{{ flat.tel | phone(flat.tel)}}</td>
+			<td class="table_td_photo"><span  @click="showModalWindow">{{flat.photo_count}}</span></td>			
+			<td class="aparts_td_buttons">
+				<button class="btn btn_send">отправить</button>
+				<button class="btn btn_moreInfo">подробнее</button>		
+				<!-- <button class="btn btn_sent">отправлено</button> -->		
+			</td>
+		</tr>									
+	</tbody>
+</table>
+</div>
+<div class="modalwindow" id="modal_bg">
+	
+	<div class="wrapper_modal_photo" id="modal">
+	<button class="btn btn_close_el"  @click='closeModalWindow'></button>
+	<div class="photo">
+		<div class="photo_header">
+			<div class="photo_data">
+				<span class="desc">Дата:</span>
+				<span class="desc_text">13.09.17 в 14:33</span>
+			</div>
+
+			<div class="photo_wrapper_roomsAndCost">
+				<div class="roomsAndCost_rooms">
+					<span class="desc">Комнаты:</span>
+					<span class="desc_text">1-комнатная, 36 м²</span>
+				</div>
+				<div class="roomsAndCost_cost">{{130000 | toRUB(130000)}}</div>
+			</div>
+			<div class="photo_address">
+				<span class="desc">Адрес:</span>
+				<span class="desc_text">район Ново-Савиновский, ул Четаева, 13к1</span>
+			</div>
+			<div class="photo_tel">
+				<span class="desc">Телефон</span>
+				<span class="desc_text">+7 1234 56 78 90</span>
+			</div>
+		</div>
+
+		<div class="photo_content">
+			<div class="content_map">карта</div>
+			<div class="content_menu">
+				<div class="menu_btn_down">
+					<i class="arrow_down"></i>
+				</div>	
+				<div class="menu_block">карта</div>
+				<div class="menu_block">фото</div>
+				<div class="menu_block"></div>
+				<div class="menu_block"></div>
+				<div class="menu_block"></div>
+						
+			</div>
+		</div>
+		<div class="photo_footer">
+			Сдам уютную 1к квартиру со всеми необходимыми вещами для комфортного проживания, рядом в 5 мин. ходьбы аквапарк, паркхаус, до центра города 10 мин на транспорте, звоните в любое время суток!
+		</div>
+	</div></div>
+
+</div>
+</div>

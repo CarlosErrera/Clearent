@@ -1,0 +1,42 @@
+	<div class="navbar">
+
+		<div class="logo">
+			<div class="logo_img"></div>
+			<span class="logo_name">Clearent</span>
+		</div>
+
+		<div class="wrapper_menu">
+
+			<div class="menu">
+
+				<!-- v-bind:class="{'menu_element_active':flats_btn_active}" -->
+
+				<div class="menu_element" v-on:click="showflats()"><router-link  to="/flats">Квартиры</router-link></div>
+	
+				<div class="menu_element" v-on:click="showrenting()"><router-link  to="/renting">Арендующие</router-link></div>
+			
+				<div class="menu_element" v-on:click="showmyclients()"><router-link  to="/myclients">Мои клиенты</router-link></div>	
+					
+			</div>
+
+			<div class="wrapper_underline">
+				<hr id="underline">
+			</div>
+		</div>
+
+
+
+		<div class="user">
+			<div class="user_img"></div>
+			<span class="user_username">Утин Владимир</span>
+			<div class="user_dropdown_menu">
+				<div>
+					<i class="ic ic_user"></i><span>Профиль</span>
+				</div>
+				<div>
+					<i class="ic ic_logout"></i><span>Выйти</span>					
+				</div>
+			</div>
+		</div>
+
+	</div>	
