@@ -5,19 +5,21 @@ export default{
 
 	methods:{
 
-		showflats(){		
+		showflats(){
+			
 			let element = document.getElementById("underline");
-    		element.style.marginLeft="0px";					
+    		element.style.marginLeft="0px";							
     	},
 
-		showmyclients(){			
+		showmyclients(){	
+			
 			let element = document.getElementById("underline");
-	    	element.style.marginLeft="320px";	
+	    	element.style.marginLeft="320px";		
 	 	},
-
 		showrenting(){	
+				
 			let element = document.getElementById("underline");
-	    	element.style.marginLeft="160px";	
+	    	element.style.marginLeft="160px"	
 	    }
 	}
 

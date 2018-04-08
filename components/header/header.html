@@ -11,11 +11,11 @@
 
 				<!-- v-bind:class="{'menu_element_active':flats_btn_active}" -->
 
-				<div class="menu_element" v-on:click="showflats()"><router-link  to="/flats">Квартиры</router-link></div>
+				<div class="menu_element" @click="showflats()" ><router-link  to="/flats">Квартиры</router-link></div>
 	
-				<div class="menu_element" v-on:click="showrenting()"><router-link  to="/renting">Арендующие</router-link></div>
+				<div class="menu_element" @click="showrenting()"><router-link  to="/renting">Арендующие</router-link></div>
 			
-				<div class="menu_element" v-on:click="showmyclients()"><router-link  to="/myclients">Мои клиенты</router-link></div>	
+				<div class="menu_element" @click="showmyclients()"><router-link  to="/myclients">Мои клиенты</router-link></div>	
 					
 			</div>
 

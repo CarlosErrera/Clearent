@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
+import store from '../store'
 
 
 Vue.filter('toRUB', function(value){
@@ -31,6 +32,7 @@ Vue.use(VueRouter);
 
 
 const routes = [
+	{path:'/', component:flats},
 	{path:'/renting', component:renting},
 	{path:'/flats', component:flats},
 	{path:'/myclients', component:myclients}
@@ -46,7 +48,8 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router: router,
-  render: h => h(App)
+  render: h => h(App),
+  store:store
 })
 
 
