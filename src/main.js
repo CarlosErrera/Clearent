@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/store'
 import App from './App.vue'
-import store from '../store'
+
 
 
 Vue.filter('toRUB', function(value){
@@ -48,8 +49,8 @@ const router = new VueRouter({
 new Vue({
   el: '#app',
   router: router,
+  store: store,
   render: h => h(App),
-  store:store
 })
 
 
