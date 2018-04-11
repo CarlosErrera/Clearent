@@ -5,6 +5,7 @@ import App from './App.vue'
 
 
 
+
 Vue.filter('toRUB', function(value){
 	if (!value) return ''
 	return parseFloat(value) + " руб"
@@ -28,6 +29,7 @@ Vue.component('renting', renting);
 import myclients from '../components/myclients/myclients-filter-table.vue'
 Vue.component('myclients', myclients);
 
+
 Vue.use(VueRouter);
 
 
@@ -43,6 +45,7 @@ const router = new VueRouter({
 	mode: 'history',
 	routes
 });
+
 
 
 

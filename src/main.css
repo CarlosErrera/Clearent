@@ -53,6 +53,11 @@
       background-color: #6197E2;
       border-color: #6197E2;
    }
+   .btn_send:hover{
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(97,151,226,0.6);
+	-moz-box-shadow: 0px 1px 1px 0px rgba(97,151,226,0.6);
+	box-shadow: 0px 1px 1px 0px rgba(97,151,226,0.6);      
+   }
    
   .btn_sent {background-color: #3ACB77;}
    
@@ -76,6 +81,9 @@
       color: #6197E2;
       background-color: #fff;
    }
+   .btn_select:hover{
+       background-color: #F8F8FD;
+   }
    
   .btn_find_apartment {
       border: 1px solid #6197E2;
@@ -89,9 +97,9 @@
       user-select: none;
    }
    .btn_addClient:hover{
-  -webkit-box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
-  -moz-box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
-  box-shadow: -1px 4px 8px -2px rgba(97,151,226,0.6);
+  -webkit-box-shadow: 0px 4px 8px -2px rgba(97,151,226,0.5);
+  -moz-box-shadow: 0px 4px 8px -2px rgba(97,151,226,0.5);
+  box-shadow: 0px 4px 8px -2px rgba(97,151,226,0.5);
    }
    
   .btn_buy {background-color: #3ACB77;}

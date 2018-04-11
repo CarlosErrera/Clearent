@@ -49,10 +49,15 @@ export default{
 				let modalbg = document.getElementById('modal_bg');
 				modalbg.style.display = "none";
 			},
-
-			sortRoom(value){
-
+			showMap(){
+				let modal_map = document.getElementById('modalmap');
+				modal_map.style.display = "flex";
+			},
+			closeMap(){
+				let modal_map = document.getElementById('modalmap');
+				modal_map.style.display = "none";				
 			}
+
 
 
 		}

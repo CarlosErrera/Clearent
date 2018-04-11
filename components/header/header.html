@@ -13,22 +13,32 @@
 				<!-- :class="{'menu_element_active':isflats}" -->
 				<!--:class="{'menu_element_active':isrent}"  -->
 				<!-- :class="{'menu_element_active':ismycl}" -->
-				<div class="menu_element"  @click="showflats()" >
-					<router-link  to="/flats" class="menu_element_link" >Квартиры</router-link>
+				<div class="menu_element" 
+					 @click='showflats()'>
+					<router-link  to="/flats" 
+						class="menu_element_link" 
+						:class="{'menu_element_active':flats}">Квартиры</router-link>
 				</div>
 	
-				<div class="menu_element"  @click="showrenting()" >
-					<router-link  to="/renting" class="menu_element_link">Арендующие</router-link>
+				<div class="menu_element"  
+					@click="showrenting()" >
+					<router-link  to="/renting" 
+						class="menu_element_link" 
+						:class="{'menu_element_active':rent}">Арендующие</router-link>
 				</div>
 			
-				<div class="menu_element" @click="showmyclients()">
-					<router-link  to="/myclients" class="menu_element_link" >Мои клиенты</router-link>
+				<div class="menu_element"
+					 @click="showmyclients()">
+					<router-link  to="/myclients" 
+						class="menu_element_link" 
+						:class="{'menu_element_active':mycl}" >Мои клиенты</router-link>
 				</div>	
 					
 			</div>
 			<!-- :class="{'underline-one':isflats, 'underline-two':isrent, 'underline-three': ismycl }" -->
 			<div class="wrapper_underline">
-				<hr class="underline" >
+				<hr class="underline" 
+				:class="{'underline-one':flats, 'underline-two':rent, 'underline-three': mycl }" >
 			</div>
 		</div>
 

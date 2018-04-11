@@ -1,43 +1,37 @@
-import store from '../../store/store'
 
+//import store from "../../store/store";
 export default{
 	data(){
 		return{
 
 		}
 	},
-
 	methods:{
 		showflats(){
-			return store.commit('getFlats');
+			return this.$store.commit('changeFlats');
 		},
 		showrenting(){
-			return store.commit('getRenting');
-
+			return this.$store.commit('changeRenting');
 		},
 		showmyclients(){
-			return store.commit('getMyclients');
+			return this.$store.commit('changeMycl');
 		}
-		// showflats(){
-		// 	this.isflats=true;
-		// 	this.isrent=false;
-		// 	this.ismycl=false;			
-		// },
-		// showrenting(){
-		// 	this.isflats=false;
-		// 	this.isrent=true;
-		// 	this.ismycl=false;
-		// },
-		// showmyclients(){
-		// 	this.isflats=false;
-		// 	this.isrent=false;
-		// 	this.ismycl=true;
-		// }
-
+	},
+	computed:{
+		flats(){
+			return this.$store.getters.flats
+		},
+		rent(){
+			return this.$store.getters.renting
+		},
+		mycl(){
+			return this.$store.getters.mycl
+		}
 		// showflats(){
 			
 		// 	let element = document.getElementById("underline");
-    	// 	element.style.marginLeft="0px";							
+		// 	console.log(element);
+    	// 	// element.style.marginLeft="0px";							
     	// },
 
 		// showmyclients(){	
@@ -51,6 +45,7 @@ export default{
 	    // 	element.style.marginLeft="160px"	
 	    // }
 	}
+	
 
 
 }

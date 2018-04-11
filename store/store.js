@@ -5,40 +5,37 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-
   state:{
     isflats:true,
-    isRenting:false,
-    isMyclients:false
-  },
-
-  actions:{},
-  mutations:{
-    getFlats(state){
-      state.isflats = true;
-      state.isRenting = false;
-      state.isMyclients  =false;
-    },
-    getRenting(state){
-      state.isflats = false;
-      state.isRenting = true;
-      state.isMyclients  =false;
-    },
-    getMyclients(state){
-      state.isflats = false;
-      state.isRenting = false;
-      state.isMyclients = true;     
-    }
+    isrent:false,
+    ismycl:false
   },
   getters:{
     flats(state){
       return state.isflats;
     },
     renting(state){
-      return state.isRenting;
+      return state.isrent;
     },
-    myClients(state){
-      return state.isMyclients;
+    mycl(state){
+      return state.ismycl;
+    }
+  },
+  mutations:{
+    changeFlats(state){
+      state.isflats = true;
+      state.isrent = false;
+      state.ismycl = false;
+    },
+    changeRenting(state){
+      state.isflats = false;
+      state.isrent = true;
+      state.ismycl = false;
+    },
+    changeMycl(state){
+      state.isflats = false;
+      state.isrent = false;
+      state.ismycl = true;
     }
   }
 })
