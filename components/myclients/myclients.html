@@ -37,18 +37,39 @@
 
 		</thead>
 		<tbody>
-			<tr>
-				<td >1</td>
-				<td >Только что</td>
-				<td >+7 1234 56 78 90</td>
+			<tr v-for="client in clients">
+				<td >{{ client.id }}</td>
+				<td >{{ client.date }}</td>
+				<td >{{ client.tel | phone(client.tel) }}</td>
 				<td >А43,В32</td>
-				<td ><input class="table_cost" type="text" placeholder="0 P"></td>
+				<td ><input class="table_cost" type="text" placeholder="0 p"></td>
 				<td class="table_td_status">
-				<div style="width: 144px;">
-					<div class="dropdown_status_header">
-						<i class="status_header_name">Выбрать</i>
-						<div class="status_header_arrowDown"></div>
-					</div>		
+				<div style="width: 144px; position:relative;">
+
+					<div class="dropdown_status_header" @click="showMenu">
+						<i class="status_header_name">{{selected}}</i>
+						<div :class="{'status_header_arrowUp':isMenu, 'status_header_arrowDown':!isMenu}"></div>
+					</div>
+					<div class="dropdown_status_menu" v-if="isMenu">
+						<div class="status_menu_elem" @click="">
+							<div class="status_circle_blue"></div>
+							<div class="status_name">Переговоры</div>
+						</div>
+						<div class="status_menu_elem">
+							<div class="status_circle_yellow"></div>
+							<div class="status_name">Встреча</div>
+						</div>
+						<div class="status_menu_elem">
+							<div class="status_circle_red"></div>
+							<div class="status_name">Отказ</div>
+						</div>
+						<div class="status_menu_elem">
+							<div class="status_circle_green"></div>
+							<div class="status_name">Успешно</div>
+						</div>						
+					</div>
+
+							
 				</div>
 				</td>
 				<td class="MyClients_td_buttons">

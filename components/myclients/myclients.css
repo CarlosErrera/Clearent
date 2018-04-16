@@ -98,9 +98,12 @@
 }
 
 .dropdown_status_menu{
-	display: flex;
+	position: absolute;
+	top: 26px;
+	display: flex;	
 	flex-direction: column;
 	width: 100%;
+	z-index: 999;
 }
 .dropdown_status_header{
 	display: flex;
@@ -133,7 +136,8 @@
     padding: 3px;
     transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
-    margin-top: 5px;
+	margin-top: 5px;
+	transition: 0.1s;
 }
 .status_header_arrowDown{
 	display: inline-block;
@@ -142,7 +146,8 @@
     padding: 3px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    margin-bottom: 3px;	
+	margin-bottom: 3px;	
+	transition: 0.1s;
 }
 .status_menu_elem{
 	padding: 8px 16px;
@@ -151,6 +156,7 @@
 	flex-direction: row;
 	align-items: center;
 	cursor: pointer;
+	z-index: 998;
 
 }
 .status_menu_elem:hover{
