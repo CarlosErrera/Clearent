@@ -3,7 +3,7 @@ export default{
         return{
             selected:'Выбрать',
             isMenu:false,
-
+            ModalAbout:false,
             clients:[
                 {
                     id:1,
@@ -15,6 +15,12 @@ export default{
         }
     },
     methods:{
+        showModalAbout(){
+            this.ModalAbout = true
+        },
+        closeAboutWindow(){
+            this.ModalAbout = false
+        },
         showMenu(){
             if(this.isMenu){
 
@@ -28,6 +34,7 @@ export default{
         closeMenu(){
             return this.isMenu = false;
         }
+
     }
 
 

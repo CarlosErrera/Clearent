@@ -29,6 +29,11 @@ Vue.component('renting', renting);
 import myclients from './components/myclients/myclients.vue'
 Vue.component('myclients', myclients);
 
+import sendData from './components/sendData.vue'
+Vue.component('sendData', sendData);
+
+import modalAbout from './components/aboutModalWindow.vue'
+Vue.component('modal-about', modalAbout)
 
 
 

@@ -2,7 +2,8 @@ export default{
 	data(){
 		return{
 			modalMap:false,
-			modalWindow:false,
+			ModalTel:false,
+			ModalAbout:false,
 			rooms:[
 				{ value:1, state:false },
 				{ value:2, state:false },
@@ -43,30 +44,28 @@ export default{
 		}
 	},
 	methods:{
-			showModalWindow(){
-				this.modalWindow = true;
+			showModalAbout(){
+				this.ModalAbout = true;
 			},
-			closeModalWindow(){
-				this.modalWindow = false;
+			closeAboutWindow(){
+				this.ModalAbout = false;
 			},
 			showMap(){
-				// 
 				this.modalMap = true;
 			},
 			closeMap(){
-				this.modalMap = false;
-				// document.getElementById('modalmap').style.display = "none";				
+				this.modalMap = false;				
 			},
-			escapeEventListener(event){
-				if(event.keyCode === 27 && this.modalOpen){
-					this.modalOpen = false 
-				}
+			showModalTel(){
+				this.ModalTel = true;
+			},
+			closeModalTel(){
+				this.ModalTel = false;
 			}
-	},
-	creadted(){
-		document.addEventListener('keyup', this.escapeEventListener);
-	},
-	destroyed(){
-		document.addEventListener('keyup', this.escapeEventListener);
+
+			
+
+
 	}
+
 }

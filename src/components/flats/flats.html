@@ -58,8 +58,8 @@
 			<td>{{ flat.tel | phone(flat.tel)}}</td>
 			<td class="table_td_photo"><span  >{{flat.photo_count}}</span></td>			
 			<td class="aparts_td_buttons">
-				<button class="btn btn_send">отправить</button>
-				<button class="btn btn_moreInfo" @click="showModalWindow">подробнее</button>		
+				<button class="btn btn_send" @click="showModalTel">отправить</button>
+				<button class="btn btn_moreInfo" @click="showModalAbout">подробнее</button>		
 				<!-- <button class="btn btn_sent">отправлено</button> -->		
 			</td>
 		</tr>									
@@ -74,57 +74,13 @@
 		width="1280" height="720" frameborder="0"></iframe>
 	</div>
 </div>
+
 <transition name="fade">
-<div  v-show="modalWindow">
-<div class="modalwindow">	
-<div class="wrapper_modal_photo" id="modal">
-	
-	<button class="btn btn_close_el" @click="closeModalWindow"></button>
-	<div class="photo">
-		<div class="photo_header">
-			<div class="photo_data">
-				<span class="desc">Дата:</span>
-				<span class="desc_text">13.09.17 в 14:33</span>
-			</div>
-
-			<div class="photo_wrapper_roomsAndCost">
-				<div class="roomsAndCost_rooms">
-					<span class="desc">Комнаты:</span>
-					<span class="desc_text">1-комнатная, 36 м²</span>
-				</div>
-				<div class="roomsAndCost_cost">{{130000 | toRUB(130000)}}</div>
-			</div>
-			<div class="photo_address">
-				<span class="desc">Адрес:</span>
-				<span class="desc_text">район Ново-Савиновский, ул Четаева, 13к1</span>
-			</div>
-			<div class="photo_tel">
-				<span class="desc">Телефон</span>
-				<span class="desc_text">+7 1234 56 78 90</span>
-			</div>
-		</div>
-
-		<div class="photo_content">
-			<div class="content_map">карта</div>
-			<div class="content_menu">
-				<div class="menu_btn_down">
-					<i class="arrow_down"></i>
-				</div>	
-				<div class="menu_block">карта</div>
-				<div class="menu_block">фото</div>
-				<div class="menu_block"></div>
-				<div class="menu_block"></div>
-				<div class="menu_block"></div>
-						
-			</div>
-		</div>
-		<div class="photo_footer">
-			Сдам уютную 1к квартиру со всеми необходимыми вещами для комфортного проживания, рядом в 5 мин. ходьбы аквапарк, паркхаус, до центра города 10 мин на транспорте, звоните в любое время суток!
-		</div>
-	</div>
-	
-</div>
-</div>
-</div>
+	<modal-about v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
 </transition>
+
+<transition name="fade">
+	<sendData v-show="ModalTel" @closeMW="closeModalTel"></sendData>
+</transition>
+
 </div>
