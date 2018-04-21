@@ -1,6 +1,8 @@
 export default{
 	data(){
 		return{
+			modalMap:false,
+			modalWindow:false,
 			rooms:[
 				{ value:1, state:false },
 				{ value:2, state:false },
@@ -42,23 +44,29 @@ export default{
 	},
 	methods:{
 			showModalWindow(){
-				let modalbg = document.getElementById('modal_bg');
-				modalbg.style.display = "flex";
+				this.modalWindow = true;
 			},
 			closeModalWindow(){
-				let modalbg = document.getElementById('modal_bg');
-				modalbg.style.display = "none";
+				this.modalWindow = false;
 			},
 			showMap(){
-				let modal_map = document.getElementById('modalmap');
-				modal_map.style.display = "flex";
+				// 
+				this.modalMap = true;
 			},
 			closeMap(){
-				let modal_map = document.getElementById('modalmap');
-				modal_map.style.display = "none";				
+				this.modalMap = false;
+				// document.getElementById('modalmap').style.display = "none";				
+			},
+			escapeEventListener(event){
+				if(event.keyCode === 27 && this.modalOpen){
+					this.modalOpen = false 
+				}
 			}
-
-
-
-		}
+	},
+	creadted(){
+		document.addEventListener('keyup', this.escapeEventListener);
+	},
+	destroyed(){
+		document.addEventListener('keyup', this.escapeEventListener);
+	}
 }

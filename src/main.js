@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import store from '../store/store'
+import router from './router/index'
+import store from './store/store'
 import App from './App.vue'
 
 
@@ -17,34 +17,19 @@ Vue.filter('phone', function (phone) {
 
 
 
-import HEADER from '../components/header/header.vue'
+import HEADER from './components/header/header.vue'
 Vue.component('HEADER', HEADER);
 
-import flats from '../components/flats/flats-filter-table.vue'
+import flats from './components/flats/flats.vue'
 Vue.component('flats', flats);
 
-import renting from '../components/renting/renting-filter-table.vue'
+import renting from './components/renting/renting.vue'
 Vue.component('renting', renting);
 
-import myclients from '../components/myclients/myclients-filter-table.vue'
+import myclients from './components/myclients/myclients.vue'
 Vue.component('myclients', myclients);
 
 
-Vue.use(VueRouter);
-
-
-
-const routes = [
-	{path:'/', component:flats},
-	{path:'/renting', component:renting},
-	{path:'/flats', component:flats},
-	{path:'/myclients', component:myclients}
-];
-
-const router = new VueRouter({
-	mode: 'history',
-	routes
-});
 
 
 

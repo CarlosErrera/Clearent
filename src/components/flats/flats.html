@@ -8,7 +8,7 @@
 			<div class="address">
 				<span>Адрес:</span>
 				<input type="text" name="" placeholder="Открыть карту"  
-				@click="showMap()">
+				@click="showMap">
 			</div>
 			<div class="rooms">
 				<span>Комнаты:</span>
@@ -56,10 +56,10 @@
 			<td>{{ flat.room_count}}</td>
 			<td>{{ flat.price | toRUB(flat.price)}}</td>
 			<td>{{ flat.tel | phone(flat.tel)}}</td>
-			<td class="table_td_photo"><span  @click="showModalWindow">{{flat.photo_count}}</span></td>			
+			<td class="table_td_photo"><span  >{{flat.photo_count}}</span></td>			
 			<td class="aparts_td_buttons">
 				<button class="btn btn_send">отправить</button>
-				<button class="btn btn_moreInfo">подробнее</button>		
+				<button class="btn btn_moreInfo" @click="showModalWindow">подробнее</button>		
 				<!-- <button class="btn btn_sent">отправлено</button> -->		
 			</td>
 		</tr>									
@@ -67,16 +67,19 @@
 </table>
 </div>
 
-<div class="wrapper_map" id="modalmap">
-		
+<div v-show="modalMap" >
+	<div class="wrapper_map">
+		<button class="btn btn_close_el" @click="closeMap" ></button>	
         <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85825c7754233e7384ec642cb9cd2723bb3dd681a027800214330593920d4143&amp;source=constructor" 
-        width="1280" height="720" frameborder="0"></iframe>
+		width="1280" height="720" frameborder="0"></iframe>
+	</div>
 </div>
+<transition name="fade">
+<div  v-show="modalWindow">
+<div class="modalwindow">	
+<div class="wrapper_modal_photo" id="modal">
 	
-<div class="modalwindow" id="modal_bg">
-	
-	<div class="wrapper_modal_photo" id="modal">
-	<button class="btn btn_close_el"  @click='closeModalWindow'></button>
+	<button class="btn btn_close_el" @click="closeModalWindow"></button>
 	<div class="photo">
 		<div class="photo_header">
 			<div class="photo_data">
@@ -118,7 +121,10 @@
 		<div class="photo_footer">
 			Сдам уютную 1к квартиру со всеми необходимыми вещами для комфортного проживания, рядом в 5 мин. ходьбы аквапарк, паркхаус, до центра города 10 мин на транспорте, звоните в любое время суток!
 		</div>
-	</div></div>
-
+	</div>
+	
 </div>
+</div>
+</div>
+</transition>
 </div>

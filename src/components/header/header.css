@@ -117,9 +117,9 @@
 	height: 14px;
  }
  
-.ic_search {background: url('../../src/assets/img/icon/ic_search.svg') no-repeat;}
-.ic_user{background:url('../../src/assets/img/icon/ic_user.svg') no-repeat;}
-.ic_logout{background:url('../../src/assets/img/icon/ic_logout.svg') no-repeat;}
+.ic_search {background: url('../../assets/img/icon/ic_search.svg') no-repeat;}
+.ic_user{background:url('../../assets/img/icon/ic_user.svg') no-repeat;}
+.ic_logout{background:url('../../assets/img/icon/ic_logout.svg') no-repeat;}
 
 
 .underline{

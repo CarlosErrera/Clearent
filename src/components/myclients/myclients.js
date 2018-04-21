@@ -3,6 +3,7 @@ export default{
         return{
             selected:'Выбрать',
             isMenu:false,
+
             clients:[
                 {
                     id:1,
@@ -16,10 +17,16 @@ export default{
     methods:{
         showMenu(){
             if(this.isMenu){
+
                 return this.isMenu = false;
             }else{
+                
                 return this.isMenu = true;
+                
             }             
+        },
+        closeMenu(){
+            return this.isMenu = false;
         }
     }
 
