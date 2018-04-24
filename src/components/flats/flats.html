@@ -64,7 +64,13 @@
 			</td>
 			<td>			
 				<transition name="fade">
-					<modal-about v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
+					<modal-about 
+						:date = "flat.date"
+						:address = "flat.address"
+						:rooms = "flat.room_count"
+						:tel = "flat.tel"
+						:price = "flat.price"
+					v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
 				</transition>
 			</td>
 			

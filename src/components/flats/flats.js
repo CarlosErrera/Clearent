@@ -20,24 +20,6 @@ export default{
 						price:20000,
 						tel:71234567890,
 						photo_count:5
-					},
-					{
-						id:2,
-						date:'13.07.2017',
-						address:'Карла Маркса 48',
-						room_count:4,
-						price:20000,
-						tel:71234567890,
-						photo_count:5
-					},
-					{
-						id:3,
-						date:'13.07.2017',
-						address:'Карла Маркса 48',
-						room_count:3,
-						price:20000,
-						tel:71234567890,
-						photo_count:5
 					}
 													
 				]

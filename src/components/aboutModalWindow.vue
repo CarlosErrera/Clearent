@@ -8,23 +8,29 @@
 		<div class="photo_header">
 			<div class="photo_data">
 				<span class="desc">Дата:</span>
-				<span class="desc_text">13.09.17 в 14:33</span>
+				<!-- <span class="desc_text">{13.09.17 в 14:33}</span> -->
+				<span class="desc_text">{{ date }}</span>
+				
 			</div>
 
 			<div class="photo_wrapper_roomsAndCost">
 				<div class="roomsAndCost_rooms">
 					<span class="desc">Комнаты:</span>
-					<span class="desc_text">1-комнатная, 36 м²</span>
+					<!-- <span class="desc_text">1-комнатная, 36 м²</span> -->
+					<span class="desc_text">{{ rooms }}</span>
+					
 				</div>
-				<div class="roomsAndCost_cost">{{130000 | toRUB(130000)}}</div>
+				<div class="roomsAndCost_cost">{{ price | toRUB(130000)}}</div>
 			</div>
 			<div class="photo_address">
 				<span class="desc">Адрес:</span>
-				<span class="desc_text">район Ново-Савиновский, ул Четаева, 13к1</span>
+				<!-- <span class="desc_text">район Ново-Савиновский, ул Четаева, 13к1</span> -->
+				<span class="desc_text">{{ address }}</span>
 			</div>
 			<div class="photo_tel">
 				<span class="desc">Телефон</span>
-				<span class="desc_text">+7 1234 56 78 90</span>
+				<span class="desc_text">{{ tel | phone(tel) }}</span>
+				<!-- <span class="desc_text">+7 1234 56 78 90</span> -->
 			</div>
 		</div>
 
@@ -74,14 +80,12 @@
 
 <script>
 export default {
-  data(){
-      return{
+	props:['date', 'rooms','address', 'tel', 'price' ],
+  	data(){
+    	return{
 		  
-      }
-  },
-  components:{
-	  
-  },
+    	}
+  	},
   methods:{
       emitClose(){
           return this.$emit('closeAboutWindow')
