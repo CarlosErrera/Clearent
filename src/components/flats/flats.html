@@ -59,9 +59,18 @@
 			<td class="table_td_photo"><span  >{{flat.photo_count}}</span></td>			
 			<td class="aparts_td_buttons">
 				<button class="btn btn_send" @click="showModalTel">отправить</button>
-				<button class="btn btn_moreInfo" @click="showModalAbout">подробнее</button>		
+				<button class="btn btn_moreInfo" @click="showModalAbout">подробнее</button>						
 				<!-- <button class="btn btn_sent">отправлено</button> -->		
 			</td>
+			<td>			
+				<transition name="fade">
+					<modal-about v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
+				</transition>
+			</td>
+			
+	
+			
+
 		</tr>									
 	</tbody>
 </table>
@@ -74,13 +83,11 @@
 		width="1280" height="720" frameborder="0"></iframe>
 	</div>
 </div>
-
-<transition name="fade">
-	<modal-about v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
-</transition>
-
 <transition name="fade">
 	<sendData v-show="ModalTel" @closeMW="closeModalTel"></sendData>
 </transition>
+
+
+
 
 </div>

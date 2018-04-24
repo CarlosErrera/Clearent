@@ -18,7 +18,7 @@
 						
 			</div>
 		</div>
-		<button class="btn btn_addClient btn_width-200px" @click="showModalAbout" >добавить клиента</button>
+		<button class="btn btn_addClient btn_width-200px" @click="showMW" >добавить клиента</button>
 
 	</div>	
 </div>	
@@ -97,6 +97,6 @@
 	</table>
 </div>
 <transition name="fade">
-	<modal-about v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
+	<sendData v-show="ModalTel" @closeMW="closeMW"></sendData>
 </transition>		
 </div>

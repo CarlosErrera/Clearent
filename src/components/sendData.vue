@@ -51,7 +51,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	/* background-color: rgb(0,0,0); Fallback color */
-    background-color: rgba(0, 0, 0, .5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, .6); /* Black w/ opacity */
 	z-index: 2;
 	position: fixed;
 	left: 0;

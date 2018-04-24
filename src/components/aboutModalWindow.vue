@@ -1,6 +1,6 @@
 <template>
 <div>
-<div class="modalwindow">	
+<div class="modalwindowAbout">	
 <div class="wrapper_modal_photo" id="modal">
 	
 	<button class="btn btn_close_el" @click="emitClose()"></button>
@@ -29,43 +29,68 @@
 		</div>
 
 		<div class="photo_content">
-			<div class="content_map">карта</div>
+
+
+			<div class="content_template"></div>
+			
+
 			<div class="content_menu">
-				<div class="menu_btn_down">
+
+				<!-- <div class="menu_btn_down">
 					<i class="arrow_down"></i>
-				</div>	
-				<div class="menu_block">карта</div>
-				<div class="menu_block">фото</div>
+				</div>	 -->
+				
+				<div class="menu_block"></div>
 				<div class="menu_block"></div>
 				<div class="menu_block"></div>
 				<div class="menu_block"></div>
 						
 			</div>
+
 		</div>
+
 		<div class="photo_footer">
 			Сдам уютную 1к квартиру со всеми необходимыми вещами для комфортного проживания, рядом в 5 мин. ходьбы аквапарк, паркхаус, до центра города 10 мин на транспорте, звоните в любое время суток!
 		</div>
 	</div>	
 </div>
 </div>
-</div>  
+
+	<!-- <template id="photo-template">
+		<div class="content_template">
+			<img src="https://yandex.ru/images/search?text=%D0%BA%D0%B2%D0%B0%D1%80%D1%82%D0%B8%D1%80%D0%B0&img_url=http%3A%2F%2Fwww.yapidekoratif.com%2Fwp-content%2Fuploads%2F145.jpg&pos=8&rpt=simage" alt="">
+		</div>
+	</template>
+
+	<template id="map-template">
+		<div class="content_template">
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85825c7754233e7384ec642cb9cd2723bb3dd681a027800214330593920d4143&amp;source=constructor" 
+		width="480" height="312" frameborder="0"></iframe>					
+		</div>
+	</template> -->
+
+</div> 	
 </template>
+
 <script>
 export default {
   data(){
       return{
-
+		  
       }
+  },
+  components:{
+	  
   },
   methods:{
       emitClose(){
           return this.$emit('closeAboutWindow')
-      }
+	  }
   }
 }
 </script>
 <style>
-.modalwindow{
+.modalwindowAbout{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -73,7 +98,7 @@ export default {
 	width: 100%;
 	height: 100%;
 	/* background-color: rgb(0,0,0); Fallback color */
-    background-color: rgba(0, 0, 0, .5); /* Black w/ opacity */
+    background-color: rgba(0, 0, 0, .3); /* Black w/ opacity */
 	z-index: 2;
 	position: fixed;
 	left: 0;
@@ -152,7 +177,7 @@ export default {
 	margin-bottom: 24px;
  }
  
-.content_map {
+.content_template {
 	width: 480px;
 	height: 312px;
 	align-self: center;
