@@ -4,17 +4,23 @@ export default{
             selected:'Выбрать',
             isMenu:false,
             ModalTel:false,
-            clients:[
-                {
-                    id:1,
-                    date:'Только что',
-                    tel:'1234567890'
-                    //price:20000
-                }
-            ]
+            // clients:[
+            //     {
+            //         id:1,
+            //         date:'Только что',
+            //         tel:'1234567890'
+            //         //price:20000
+            //     }
+            // ]
+        }
+    },
+    computed:{
+        clients(){
+            return this.$store.getters.myclResult
         }
     },
     methods:{
+
         showMW(){
             this.ModalTel = true
         },

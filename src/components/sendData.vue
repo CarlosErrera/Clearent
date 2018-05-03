@@ -38,7 +38,7 @@ export default {
 	border: none;
 	width: 24px;
 	height: 24px;
-	background: url('../assets/img/icon/ic_close.svg') no-repeat center center;
+	background: url('../assets/icon/ic_close.svg') no-repeat center center;
 	background-color: #fff;
 	cursor: pointer;
 	outline: none;

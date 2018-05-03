@@ -166,7 +166,7 @@
       border-radius: 4px;
       outline: none;
       margin-left: 24px;
-      background: url('./assets/img/icon/ic_close.svg') no-repeat center center;
+      background: url('./assets/icon/ic_close.svg') no-repeat center center;
       background-color: white;
       cursor: pointer;
    }

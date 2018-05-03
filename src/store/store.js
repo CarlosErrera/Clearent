@@ -1,43 +1,53 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import FLATS from './data.js'
+import RENT from './rent-data.js'
+
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
+export default new Vuex.Store({
   state:{
-    isflats:true,
-    isrent:false,
-    ismycl:false
+    flats:FLATS,
+    rent:RENT,
+    oneRoom:[],
+    mycl:[]
   },
-  getters:{
-    flats(state){
-      return state.isflats;
-    },
-    renting(state){
-      return state.isrent;
-    },
-    mycl(state){
-      return state.ismycl;
-    }
+  actions:{
+
   },
   mutations:{
-    changeFlats(state){
-      state.isflats = true;
-      state.isrent = false;
-      state.ismycl = false;
+    putInMycl(state,){
+      state.rent.map(function(item){
+        state.mycl.push(item);   
+      })
+      return state.mycl;
     },
-    changeRenting(state){
-      state.isflats = false;
-      state.isrent = true;
-      state.ismycl = false;
+    getOriginalFlats(state){
+      return state.flats = FLATS 
     },
-    changeMycl(state){
-      state.isflats = false;
-      state.isrent = false;
-      state.ismycl = true;
+    getOneRoom(state, room){
+      var array = [];
+      state.flats.map(function(item){  
+        if(item.room_count == room){  
+          array.push(item)
+        }
+      })
+      state.flats = array;
     }
+  },
+  getters:{
+    flatsResult(state){
+      return state.flats
+    },
+    rentResult(state){
+      return state.rent
+    },
+    myclResult(state){
+      return state.mycl
+    }
+    
   }
 })
 
-export default store

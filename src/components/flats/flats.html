@@ -17,20 +17,39 @@
 					<div class="rooms_dropdown_content">
 						
 
-						<label class="checkbox_container" v-for="room in rooms">{{ room.value }}
-						  <input type="checkbox" @click="sortRoom(room.value)">
+						<label class="checkbox_container">1
+						  <input type="checkbox" v-model="selected1" @click="getOneRoom(selected1, 1)"  >
 						  <span class="checkmark"></span>
 						</label>
-
+						<label class="checkbox_container">2
+							<input type="checkbox" v-model="selected2" @click="getOneRoom(selected2, 2)"   >
+							<span class="checkmark"></span>
+						  </label>
+						<label class="checkbox_container">3
+							<input type="checkbox" v-model="selected3" @click="getOneRoom(selected3, 3)"  >
+							<span class="checkmark"></span>
+						</label>
+						<label class="checkbox_container">4
+							<input type="checkbox" v-model="selected4" @click="getOneRoom(selected4, 4)"  >
+							<span class="checkmark"></span>
+						</label>
+						<label class="checkbox_container">5
+							<input type="checkbox" v-model="selected5" @click="getOneRoom(selected5, 5)"  >
+							<span class="checkmark"></span>
+						</label>
+						<!-- <label class="checkbox_container">5
+							<input type="checkbox" >
+							<span class="checkmark"></span>
+						</label>						  						  						   -->
 					</div>
 
 				</div>
 			</div>
 			<div class="cost">
 				<span>Стоимость:</span>
-				<input class="cost_from" type="text"  placeholder="от"><div class="line"></div>
-				<input class="cost_to" type="text"  placeholder="до">
-				<button class="btn_clear_search"></button>
+				<input class="cost_from" type="number" v-model="costFrom"  placeholder="от"><div class="line"></div>
+				<input class="cost_to" type="number" v-model="costTo"  placeholder="до">
+				<button class="btn_clear_search" @click="clearAllFilters"></button>
 			</div>			
 		</div>	
 </div>
@@ -49,34 +68,20 @@
 		</tr>
 	</thead>
 	<tbody >
-		<tr v-for="flat in flats">
+		<tr v-for="flat in Flats">
+
 			<td>{{ flat.id}}</td>
 			<td>{{ flat.date}}</td>
 			<td>{{ flat.address}}</td>
 			<td>{{ flat.room_count}}</td>
 			<td>{{ flat.price | toRUB(flat.price)}}</td>
 			<td>{{ flat.tel | phone(flat.tel)}}</td>
-			<td class="table_td_photo"><span  >{{flat.photo_count}}</span></td>			
+			<td class="table_td_photo"><span>{{flat.photo_count}}</span></td>			
 			<td class="aparts_td_buttons">
 				<button class="btn btn_send" @click="showModalTel">отправить</button>
 				<button class="btn btn_moreInfo" @click="showModalAbout">подробнее</button>						
-				<!-- <button class="btn btn_sent">отправлено</button> -->		
+				<!-- <button class="btn btn_sent">отправлено</button> -->
 			</td>
-			<td>			
-				<transition name="fade">
-					<modal-about 
-						:date = "flat.date"
-						:address = "flat.address"
-						:rooms = "flat.room_count"
-						:tel = "flat.tel"
-						:price = "flat.price"
-					v-show="ModalAbout" @closeAboutWindow="closeAboutWindow"></modal-about>
-				</transition>
-			</td>
-			
-	
-			
-
 		</tr>									
 	</tbody>
 </table>
@@ -85,13 +90,19 @@
 <div v-show="modalMap" >
 	<div class="wrapper_map">
 		<button class="btn btn_close_el" @click="closeMap" ></button>	
-        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85825c7754233e7384ec642cb9cd2723bb3dd681a027800214330593920d4143&amp;source=constructor" 
-		width="1280" height="720" frameborder="0"></iframe>
+        <!-- <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85825c7754233e7384ec642cb9cd2723bb3dd681a027800214330593920d4143&amp;source=constructor" 
+		width="1280" height="720" frameborder="0"></iframe> -->
 	</div>
 </div>
 <transition name="fade">
 	<sendData v-show="ModalTel" @closeMW="closeModalTel"></sendData>
 </transition>
+
+
+<modal-about :showModal = "isActiveModal" @closeAboutWindow = "closeModalAbout"></modal-about>
+
+
+
 
 
 

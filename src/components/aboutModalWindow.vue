@@ -1,14 +1,14 @@
 <template>
-<div>
-<div class="modalwindowAbout">	
+<transition name="fade">
+<div class="modalwindowAbout" v-show="showModal">	
 <div class="wrapper_modal_photo" id="modal">
 	
-	<button class="btn btn_close_el" @click="emitClose()"></button>
+	<button class="btn btn_close_el" v-on:click="emitClose()"></button>
 	<div class="photo">
 		<div class="photo_header">
 			<div class="photo_data">
 				<span class="desc">Дата:</span>
-				<!-- <span class="desc_text">{13.09.17 в 14:33}</span> -->
+				
 				<span class="desc_text">{{ date }}</span>
 				
 			</div>
@@ -16,21 +16,21 @@
 			<div class="photo_wrapper_roomsAndCost">
 				<div class="roomsAndCost_rooms">
 					<span class="desc">Комнаты:</span>
-					<!-- <span class="desc_text">1-комнатная, 36 м²</span> -->
-					<span class="desc_text">{{ rooms }}</span>
 					
+					<span class="desc_text">{{  }}</span>	
 				</div>
-				<div class="roomsAndCost_cost">{{ price | toRUB(130000)}}</div>
+
+				<div class="roomsAndCost_cost">{{ }}</div>
 			</div>
 			<div class="photo_address">
 				<span class="desc">Адрес:</span>
-				<!-- <span class="desc_text">район Ново-Савиновский, ул Четаева, 13к1</span> -->
+				
 				<span class="desc_text">{{ address }}</span>
 			</div>
 			<div class="photo_tel">
 				<span class="desc">Телефон</span>
-				<span class="desc_text">{{ tel | phone(tel) }}</span>
-				<!-- <span class="desc_text">+7 1234 56 78 90</span> -->
+				<span class="desc_text">{{  }}</span>
+				
 			</div>
 		</div>
 
@@ -46,10 +46,9 @@
 					<i class="arrow_down"></i>
 				</div>	 -->
 				
-				<div class="menu_block"></div>
-				<div class="menu_block"></div>
-				<div class="menu_block"></div>
-				<div class="menu_block"></div>
+				<div class="menu_block">
+
+				</div>
 						
 			</div>
 
@@ -75,22 +74,26 @@
 		</div>
 	</template> -->
 
-</div> 	
+</transition>
 </template>
 
 <script>
 export default {
-	props:['date', 'rooms','address', 'tel', 'price' ],
+	
   	data(){
     	return{
-		  
+
+		 	
     	}
   	},
-  methods:{
-      emitClose(){
-          return this.$emit('closeAboutWindow')
-	  }
-  }
+	props:['showModal','date', 'address'],
+  	methods:{
+      	emitClose(){
+          	return this.$emit('closeAboutWindow')
+		}
+	}
+
+
 }
 </script>
 <style>
@@ -98,11 +101,10 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
 	width: 100%;
 	height: 100%;
 	/* background-color: rgb(0,0,0); Fallback color */
-    background-color: rgba(0, 0, 0, .3); /* Black w/ opacity */
+	background-color: rgba(0, 0, 0, 0.6);
 	z-index: 2;
 	position: fixed;
 	left: 0;
@@ -129,7 +131,7 @@ export default {
 	border: none;
 	width: 24px;
 	height: 24px;
-	background: url('../assets/img/icon/ic_close.svg') no-repeat center center;
+	background: url('../assets/icon/ic_close.svg') no-repeat center center;
 	background-color: #fff;
 	cursor: pointer;
 	outline: none;
@@ -189,18 +191,21 @@ export default {
  }
  
 .content_menu {
-	display: flex;
+	/* display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	position: relative;
-	height: 100%;
+	justify-content: flex-start; */
+	overflow: auto;
+	height: 312px;
  }
  
 .menu_block {
 	width: 56px;
 	height: 56px;
 	background: #EFEFEF;
+	/* background: url('../assets/img/wallpaper.jpg') no-repeat ; */
+	background-size: 56px 56px;
 	margin-bottom: 8px;
+
  }
  
 .photo_footer {

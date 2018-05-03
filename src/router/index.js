@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import renting from './../components/renting/renting.vue'
 import myclients from './../components/myclients/myclients.vue'
 import flats from './../components/flats/flats.vue'
+import modalAbout from './../components/aboutModalWindow.vue'
 
 Vue.use(VueRouter)
 

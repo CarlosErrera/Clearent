@@ -54,6 +54,7 @@
 	color: #9FADC1;
 }
 
+
  
 .menu_element > a:hover {color: #2D9CDB;}
  /* #d0d7e1 */
@@ -117,9 +118,9 @@
 	height: 14px;
  }
  
-.ic_search {background: url('../../assets/img/icon/ic_search.svg') no-repeat;}
-.ic_user{background:url('../../assets/img/icon/ic_user.svg') no-repeat;}
-.ic_logout{background:url('../../assets/img/icon/ic_logout.svg') no-repeat;}
+.ic_search {background: url('../../assets/icon/ic_search.svg') no-repeat;}
+.ic_user{background:url('../../assets/icon/ic_user.svg') no-repeat;}
+.ic_logout{background:url('../../assets/icon/ic_logout.svg') no-repeat;}
 
 
 .underline{
@@ -128,13 +129,10 @@
 	margin: 0;
 	background: #2D9CDB;
 	border: none;
-	transition: .3s ease-in-out;	
-}
-.underline-one{
-	margin-left: 0px;
+	transition: .3s all;
 }
 .underline-two{
-	margin-left: 160px;
+	margin-left: 160px;	
 }
 .underline-three{
 	margin-left: 320px;

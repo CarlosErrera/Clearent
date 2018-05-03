@@ -1,36 +1,43 @@
+
+
 export default{
 	data(){
 		return{
 			modalMap:false,
 			ModalTel:false,
-			ModalAbout:false,
-			rooms:[
-				{ value:1, state:false },
-				{ value:2, state:false },
-				{ value:3, state:false },
-				{ value:4, state:false },
-				{ value:5, state:false }
-			],
-			flats:[
-					{
-						id:1,
-						date:'13.07.2017',
-						address:'Карла Маркса 48',
-						room_count:2,
-						price:20000,
-						tel:71234567890,
-						photo_count:5
-					}
-													
-				]
+			isActiveModal:false,
+			selected1:false,
+			selected2:false,
+			selected3:false,
+			selected4:false,
+			selected5:false,
+			costFrom:'',
+			costTo:''
+
+			// rooms:[
+			// 	{ value:1, state:false },
+			// 	{ value:2, state:false },
+			// 	{ value:3, state:false },
+			// 	{ value:4, state:false },
+			// 	{ value:5, state:false }
+			// ]
+			
+			
 		}
+	},
+	computed:{
+		Flats(){
+			return this.$store.getters.flatsResult
+			// return this.$store.getters.getOneRoom
+		}
+		
 	},
 	methods:{
 			showModalAbout(){
-				this.ModalAbout = true;
+				this.isActiveModal = true;
 			},
-			closeAboutWindow(){
-				this.ModalAbout = false;
+			closeModalAbout(){
+				this.isActiveModal = false;
 			},
 			showMap(){
 				this.modalMap = true;
@@ -43,7 +50,23 @@ export default{
 			},
 			closeModalTel(){
 				this.ModalTel = false;
+			},
+			getOneRoom(selected, room){
+				//console.log(selected);
+				if(selected){return this.$store.commit('getOriginalFlats')}	
+				else{ return this.$store.commit('getOneRoom', room)}
+			},
+			clearAllFilters(){
+				this.selected1=false
+				this.selected2=false
+				this.selected3=false
+				this.selected4=false
+				this.selected5=false
+				return this.$store.commit('getOriginalFlats')
 			}
+			// getOriginalFlats(){
+			// 	return this.$store.commit('getOriginalFlats')
+			// }
 
 			
 

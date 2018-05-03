@@ -71,7 +71,7 @@
   width:13.24% ;
   padding: 20px 0;
 }
-.MyClients_td_buttons button{
+.MyClients_td_buttons a{
 	margin-right: 24px;
 }
 .table_MyClients tbody tr{
@@ -252,7 +252,7 @@
 	width: 12px;
 	height: 8px;
 	padding-bottom: 4px;
-	background: url('../../assets/img/icon/ic_status_complete.svg') no-repeat center center;
+	background: url('../../assets/icon/ic_status_complete.svg') no-repeat center center;
 }
  /* width */
  ::-webkit-scrollbar {
@@ -287,4 +287,19 @@
    transform: translateY(-50px);
 	opacity: 0; 
   }
- 
+ .a_find_apart{
+	text-decoration: none;
+	color:#6197E2;
+	display: inline-block;
+	padding: 4.5px 0px;
+	border: 1px solid #6197E2;
+	border-radius: 12px;
+	text-align: center;
+	width: 144px;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 1rem;
+	text-transform: uppercase;
+
+	
+ }
