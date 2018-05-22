@@ -33,8 +33,11 @@ export default{
 		
 	},
 	methods:{
-			showModalAbout(){
+			showModalAbout(id){
+				//search id on Vuex store
+				this.$store.commit('sendDataToAboutWindow', id);
 				this.isActiveModal = true;
+
 			},
 			closeModalAbout(){
 				this.isActiveModal = false;

@@ -1,6 +1,6 @@
 <template>
 <transition name="fade">
-<div class="modalwindowAbout" v-show="showModal">	
+<div class="modalwindowAbout" v-if="showModal" v-for="item in About" >	
 <div class="wrapper_modal_photo" id="modal">
 	
 	<button class="btn btn_close_el" v-on:click="emitClose()"></button>
@@ -9,7 +9,7 @@
 			<div class="photo_data">
 				<span class="desc">Дата:</span>
 				
-				<span class="desc_text">{{ date }}</span>
+				<span class="desc_text">{{ item.date }}</span>
 				
 			</div>
 
@@ -17,19 +17,19 @@
 				<div class="roomsAndCost_rooms">
 					<span class="desc">Комнаты:</span>
 					
-					<span class="desc_text">{{  }}</span>	
+					<span class="desc_text">{{ item.room_count}}</span>	
 				</div>
 
-				<div class="roomsAndCost_cost">{{ }}</div>
+				<div class="roomsAndCost_cost">{{ item.price | toRUB(item.price)}}</div>
 			</div>
 			<div class="photo_address">
 				<span class="desc">Адрес:</span>
 				
-				<span class="desc_text">{{ address }}</span>
+				<span class="desc_text">{{ item.address}}</span>
 			</div>
 			<div class="photo_tel">
 				<span class="desc">Телефон</span>
-				<span class="desc_text">{{  }}</span>
+				<span class="desc_text">{{ item.tel }}</span>
 				
 			</div>
 		</div>
@@ -55,7 +55,6 @@
 		</div>
 
 		<div class="photo_footer">
-			Сдам уютную 1к квартиру со всеми необходимыми вещами для комфортного проживания, рядом в 5 мин. ходьбы аквапарк, паркхаус, до центра города 10 мин на транспорте, звоните в любое время суток!
 		</div>
 	</div>	
 </div>
@@ -86,12 +85,19 @@ export default {
 		 	
     	}
   	},
-	props:['showModal','date', 'address'],
+	props:['showModal'],
   	methods:{
       	emitClose(){
           	return this.$emit('closeAboutWindow')
 		}
+	},
+	computed:{
+		About(){
+			return this.$store.getters.AboutWindowResult
+		}
+		
 	}
+
 
 
 }

@@ -12,22 +12,26 @@ export default new Vuex.Store({
     flats:FLATS,
     rent:RENT,
     oneRoom:[],
-    mycl:[]
+    mycl:[],
+    dataForAboutWindow:[]
   },
   actions:{
 
   },
   mutations:{
     putInMycl(state,){
+      // метод для добавления клиентов из "Арендующих" в "Мои Клиенты"
       state.rent.map(function(item){
         state.mycl.push(item);   
       })
       return state.mycl;
     },
     getOriginalFlats(state){
+      // очистка фильтра комнат
       return state.flats = FLATS 
     },
     getOneRoom(state, room){
+      // для фильтра комнат
       var array = [];
       state.flats.map(function(item){  
         if(item.room_count == room){  
@@ -35,17 +39,34 @@ export default new Vuex.Store({
         }
       })
       state.flats = array;
+    },
+    sendDataToAboutWindow(state, id){
+      // метод чтобы запушить данные в модальное окно 
+      state.dataForAboutWindow = [];
+      state.flats.map(function(item){
+        if(id == item.id){
+           state.dataForAboutWindow.push(item)
+        }
+      })
     }
   },
   getters:{
     flatsResult(state){
+      // возвращает все данные о "Квартирах"
       return state.flats
     },
     rentResult(state){
+      //  возвращает все данные о "Арендующих"
       return state.rent
     },
     myclResult(state){
+      // Возвращает все данные о "Моих Клиентах" 
+      // Изначально массив пустой
       return state.mycl
+    },
+    AboutWindowResult(state){
+      // данные для модального окна
+      return state.dataForAboutWindow
     }
     
   }
