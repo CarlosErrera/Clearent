@@ -1,4 +1,6 @@
+import 'swiper/dist/css/swiper.css'
 
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default{
 	data(){
@@ -13,17 +15,12 @@ export default{
 			selected5:false,
 			costFrom:'',
 			costTo:''
-
-			// rooms:[
-			// 	{ value:1, state:false },
-			// 	{ value:2, state:false },
-			// 	{ value:3, state:false },
-			// 	{ value:4, state:false },
-			// 	{ value:5, state:false }
-			// ]
-			
-			
+	
 		}
+	},
+	components: {
+		swiper,
+		swiperSlide
 	},
 	computed:{
 		Flats(){

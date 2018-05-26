@@ -6,6 +6,7 @@ import App from './App.vue'
 
 
 
+
 Vue.filter('toRUB', function(value){
 	if (!value) return ''
 	return parseFloat(value) + " руб"

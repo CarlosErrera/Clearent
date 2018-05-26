@@ -46,7 +46,7 @@
 				<td class="table_td_status">
 				<div style="width: 144px; position:relative;">
 
-					<div class="dropdown_status_header" @click="showMenu">
+					<div class="dropdown_status_header" @click.self="showMenu">
 						<div class="wrapper_status_name">
 							<i class="status_circle" v-if="selected=='Выбрать'"></i>
 							<i class="status_circle_blue" v-if="selected=='Переговоры'"></i>

@@ -34,13 +34,13 @@
 		</thead>
 		<tbody>
 			<tr v-for="rent in rentes">
-				<td id="rentID">{{ rent.id }}</td>
+				<td>{{ rent.id }}</td>
 				<td>{{ rent.date}}</td>
 				<td>{{ rent.address}}</td>
 				<td>{{ rent.room_count}}</td>
 				<td>{{ rent.price }}</td>
 				<td class="renting_buttons">
-					<button class="btn btn_select" id="btnselect" @click="addtoMycl">выбрать</button>
+					<button class="btn btn_select" id="btn_select" v-on:click.self="addtoMycl(rent.id)">выбрать</button>
 					<!-- <button class="btn btn_added">добавлен</button> -->					
 				</td>
 			</tr>

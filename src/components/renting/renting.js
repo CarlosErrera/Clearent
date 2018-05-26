@@ -12,12 +12,12 @@ export default{
         }
     },
     methods:{
-        addtoMycl(){
-            document.getElementById('btnselect').classList.remove('btn_select');
-            document.getElementById('btnselect').classList.add('btn_added');
-            var id = document.getElementById('rentID').value;
-            
-            return this.$store.commit('putInMycl');
+        addtoMycl(id){
+
+            var btn = document.getElementsByTagName('button')[id];
+            btn.classList.remove('btn_select')
+            btn.classList.add('btn_added')           
+            return this.$store.commit('putInMycl',id);
         }
     }
 }

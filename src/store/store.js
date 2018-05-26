@@ -19,10 +19,12 @@ export default new Vuex.Store({
 
   },
   mutations:{
-    putInMycl(state,){
+    putInMycl(state,id){
       // метод для добавления клиентов из "Арендующих" в "Мои Клиенты"
-      state.rent.map(function(item){
-        state.mycl.push(item);   
+      state.rent.forEach(function(rentItem){
+        if(rentItem.id == id){
+          state.mycl.push(rentItem)
+        }
       })
       return state.mycl;
     },

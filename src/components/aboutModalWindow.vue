@@ -42,9 +42,9 @@
 
 			<div class="content_menu">
 
-				<!-- <div class="menu_btn_down">
+				<div class="menu_btn_down">
 					<i class="arrow_down"></i>
-				</div>	 -->
+				</div>	
 				
 				<div class="menu_block">
 
